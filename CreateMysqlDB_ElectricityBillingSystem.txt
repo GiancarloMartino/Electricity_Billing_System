@@ -1,0 +1,34 @@
+
+Electricity billing System mysqlDB
+(macOs instructions)
+
+0. From terminal Go to mysql folder:
+cd /usr/local/mysql/bin/
+
+0.1 run mysql shell:
+./mysql -u root -p
+
+
+1.CREATE DATABASE:
+create database ebs;
+
+2- USE THE DATABASE:
+use ebs;
+
+3.CREATE LOGIN TABLE:
+create table login(meter_no varchar(20), username varchar(20), name varchar(30), password varchar(20), user varchar(30));
+
+4.CREATE CUSTOMER TABLE TO STORE THE INFORMATION OF THE CUSTOMER
+create table customer(name varchar(30), meter varchar(20), address varchar(50), city varchar(20), state varchar(30), email varchar(30), phone varchar(20));
+
+5.CREATE METER INFO
+create table meter_info(meter_number varchar(20), meter_location varchar(20), meter_type varchar(30), phase_code varchar(20), bill_type varchar(20), days varchar(20));
+
+6.CREATE TAX TO STORE THE CURRENT TAX STRUCTURE:
+create table tax(cost_per_unit varchar(20), meter_rent varchar(20), service_charge varchar(20), service_tax varchar(20), swacch_bharat_cess varchar(20), fixed_tax varchar(20));
+
+7.INSERT INTO TAX VALUES
+insert into tax values('9','47','22','57','6','18');
+
+8.CREATE BILL TO STORE THE BILLING INFORMATION
+create table bill(meter varchar(20), month varchar(20), units varchar(20), total_bill varchar(20), status varchar(20));
